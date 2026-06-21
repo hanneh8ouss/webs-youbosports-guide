@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>友博体育 · 信息索引与产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf8f5;   /* 米白底 */
+            font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2e2b28;
+            padding: 0 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 2.8rem auto 3.6rem;
+            background: #fffcf9;
+            padding: 2.6rem 2.4rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #efece6;
+        }
+
+        /* 文章排版风格 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+            color: #2b2926;
+            padding-bottom: 0.1rem;
+            border-left: 6px solid #b8aa96;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6e6862;
+            margin-top: 0.35rem;
+            margin-bottom: 1.8rem;
+            padding-left: 1rem;
+            font-weight: 350;
+            border-left: 6px solid #e2d9cf;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: #3f3a35;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #e8e1d8;
+            padding-bottom: 0.2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-block {
+            background: #f4efe9;
+            border-left: 5px solid #b8aa96;
+            padding: 1rem 1.6rem;
+            border-radius: 0 16px 16px 0;
+            margin: 1.6rem 0;
+        }
+
+        .highlight-block p {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-block strong {
+            color: #4c443e;
+            font-weight: 500;
+        }
+
+        .insight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .insight-card {
+            flex: 1 1 180px;
+            background: #fffffffa;
+            border: 1px solid #e6dfd6;
+            padding: 1rem 1.2rem;
+            border-radius: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+            transition: all 0.1s ease;
+        }
+
+        .insight-card h3 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            color: #3f3934;
+            margin-bottom: 0.3rem;
+        }
+
+        .insight-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #4f4943;
+        }
+
+        .usage-note {
+            background: #f8f4ef;
+            padding: 1.2rem 1.8rem;
+            border-radius: 40px 12px 40px 12px;
+            margin: 1.8rem 0;
+            font-style: normal;
+            border: 1px solid #ddd5ca;
+        }
+
+        .usage-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            border-top: 1px dashed #d6cec2;
+            padding-top: 1.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item strong {
+            font-weight: 500;
+            color: #4f4640;
+            display: inline-block;
+            margin-right: 0.2rem;
+        }
+
+        .faq-item strong::before {
+            content: "Q: ";
+            font-weight: 400;
+            color: #948b81;
+        }
+
+        .faq-item .faq-answer {
+            margin-left: 1.2rem;
+            color: #4c4540;
+        }
+
+        .link-sentence {
+            background: #f0ebe4;
+            padding: 0.1rem 0.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            white-space: nowrap;
+            transition: background 0.15s;
+        }
+
+        a {
+            color: #5c5145;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cbbcb0;
+            text-decoration-thickness: 1px;
+            font-weight: 400;
+            transition: all 0.15s;
+        }
+
+        a:hover {
+            color: #2d2824;
+            text-decoration-color: #9c8b7a;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #6f6a64;
+            background: #f3efe9;
+            border-radius: 40px;
+            padding: 0.6rem 1.4rem;
+            margin-top: 2.2rem;
+            display: inline-block;
+            letter-spacing: 0.01em;
+        }
+
+        /* 响应式 */
+        @media (max-width: 550px) {
+            body { padding: 0 0.8rem; }
+            .page-wrap { padding: 1.6rem 1.2rem; }
+            h1 { font-size: 1.7rem; padding-left: 0.7rem; }
+            .subhead { font-size: 0.95rem; }
+            .insight-grid { flex-direction: column; }
+            .usage-note { border-radius: 24px; padding: 1rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <h1>友博体育 · 资料索引与产品说明</h1>
+    <div class="subhead">从信息整理的角度，了解一个体育内容平台</div>
+
+    <p>
+        在信息过载的年代，整理比收集更需要方法。本文围绕<strong>友博体育</strong>这一名称，尝试从资源归档与内容索引的视角，梳理其定位、可用特点以及使用时的合理预期。不夸大、不诱导，仅作客观说明。
+    </p>
+
+    <!-- 摘要 + 亮点混合区块 (引用块风格) -->
+    <div class="highlight-block">
+        <p><strong>摘要</strong> · 友博体育是一个面向体育资讯、赛事动态与相关数据聚合的线上平台。通过持续的信息组织，为有查阅体育内容需求的用户提供一个相对集中的索引起点。其页面结构偏向于信息展示，强调内容条理与可读性。</p>
+        <p><strong>信息亮点</strong> · 归类清晰、赛事覆盖较广、页面响应速度尚可；不强制注册即可浏览大部分内容，降低了信息获取的门槛。</p>
+    </div>
+
+    <!-- 特点卡片网格 -->
+    <h2>特点整理</h2>
+    <div class="insight-grid">
+        <div class="insight-card">
+            <h3>赛事覆盖面</h3>
+            <p>主流联赛及部分小众项目均有条目索引，更新频率中等偏上，适合日常关注。</p>
+        </div>
+        <div class="insight-card">
+            <h3>内容组织</h3>
+            <p>以栏目进行分类，导航层级较浅，从首页就能快速定位到不同运动类别。</p>
+        </div>
+        <div class="insight-card">
+            <h3>轻量访问</h3>
+            <p>无需频繁登录，页面布局偏文字导向，加载负担较小，对移动设备友好。</p>
+        </div>
+        <div class="insight-card">
+            <h3>外链参考</h3>
+            <p>部分内容附带外部来源链接，方便进一步核实或查阅原始信息，适合资料整理场景。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 / 场景 (用提示框风格) -->
+    <div class="usage-note">
+        <p><strong>使用建议 · 信息检索场景</strong></p>
+        <p>
+            • 将友博体育视为一个体育类目索引，而非唯一权威来源。<br>
+            • 查找特定赛事日程或队伍资料时，可以先利用站内分类定位，再结合其他渠道交叉确认。<br>
+            • 若你有整理体育资讯的需求（例如制作简报、归档赛程），这里的结构化列表能节省初始收集时间。<br>
+            • 关注页面更新日期，部分历史数据可能随时间沉淀，注意时效性。
+        </p>
+        <p style="margin-top: 0.6rem; font-size: 0.95rem; color: #5f5852;">
+            ⚡ 提示：访问时可直接将 <span class="link-sentence"><a href="https://webs-youbosports.com">友博体育</a></span> 加入浏览器书签，便于日常查阅。
+        </p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <h2>关于访问的补充说明</h2>
+    <p>
+        作为资料索引平台，友博体育所提供的链接与信息均来自公开可查的范围。访问时请注意：任何线上的体育资讯都可能存在延迟或偏差，建议理性看待，并以官方赛事组织方公布的信息为最终依据。友博体育本身不提供博彩、投注或非法内容，亦不鼓励将体育信息用于风险行为。我们也不对第三方链接的内容负责，访问时请自行甄别。
+    </p>
+    <p>
+        若你有兴趣了解其内容架构，可直接通过上方链接进入 <span class="link-sentence"><a href="https://webs-youbosports.com">友博体育</a></span> 主页浏览。建议使用主流浏览器，并将页面缩放调整为舒适比例，以获得更好的阅读体验。
+    </p>
+
+    <!-- FAQ 摘要 (非完整但自然) -->
+    <div class="faq-mini">
+        <h2 style="margin-top: 0;">常见疑问摘要</h2>
+        <div class="faq-item">
+            <strong>友博体育是否需要注册才能看内容？</strong>
+            <div class="faq-answer">大部分内容可直接访问，无需注册。部分互动或收藏功能可能需要简单注册，但不影响基本浏览。</div>
+        </div>
+        <div class="faq-item">
+            <strong>网站主要包含哪些体育种类？</strong>
+            <div class="faq-answer">足球、篮球、网球、棒球等主流项目均有，另外包含一些综合赛事及体育文化类文章。</div>
+        </div>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <div class="faq-answer">日常赛事期间更新较快，休赛期相对放缓；整体节奏属于常规资讯站点水平。</div>
+        </div>
+    </div>
+
+    <!-- 温和收尾 -->
+    <div class="disclaimer">
+        本文仅作信息说明 · 内容基于平台公开呈现整理，不构成任何建议。
+    </div>
+
+</div>
+</body>
+</html>
